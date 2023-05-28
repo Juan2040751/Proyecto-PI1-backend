@@ -6,10 +6,13 @@ db.sqlite3
 media
 
 # Environments 
-.env 
+*.env 
 .venv 
 env/ 
 venv/ 
-ENV/ 
+ENV/
+bin/
+lib/
+*.sqlite3
 env.bak/ 
 venv.bak/ 
