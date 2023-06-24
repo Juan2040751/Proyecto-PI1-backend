@@ -28,7 +28,7 @@ def register_view(request):
         if not re.match(r'^[a-zA-Z\w\.-]+@[\w\.-]+\.\w+$', email):
             return JsonResponse({"message": "Correo electrónico inválido"})
         if User.objects.filter(email=email).exists():
-            return JsonResponse({"message": "El orreo electrónico ya está vinculado"})
+            return JsonResponse({"message": "El correo electrónico ya está vinculado"})
         if password != confirmation:
             return JsonResponse({"message": "Contraseñas no coinciden"}) 
         
@@ -39,7 +39,7 @@ def register_view(request):
             return JsonResponse({"message": "Username already taken."})
         
         login(request, user)
-        return JsonResponse({"message": "Registration successful."})
+        return JsonResponse({"message": "Registration successful.", "id": user.id, "username": user.username})
     else:
         return JsonResponse({"message": "Only POST request are allowed"}, status=405)
     
@@ -60,7 +60,7 @@ def login_view(request):
 
         if user is not None and user.check_password(password):
             login(request, user)
-            return JsonResponse({"message": "Login successful"})
+            return JsonResponse({"message": "Login successful", "id": user.id, "username": user.username})
         else:
             return JsonResponse({"message": "Invalid email and/or password."})
 
