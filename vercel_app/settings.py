@@ -10,13 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
-from pathlib import Path
 import os
-import dj_database_url
-from urllib.parse import urlparse
-from django.core.management.utils import get_random_secret_key
-import sys
+from pathlib import Path
 
+import dj_database_url
+from django.core.management.utils import get_random_secret_key
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,13 +24,13 @@ DATABASE_URL = "postgres://proyecto_pi1_user:u0ZDtadoBubQTMohzFWlS2JGHgFRH3Fl@dp
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'django-insecure-=cldztbc4jg&xl0!x673!*v2_=p$$eu)=7*f#d0#zs$44xx-h^'
+# SECRET_KEY = 'django-insecure-=cldztbc4jg&xl0!x673!*v2_=p$$eu)=7*f#d0#zs$44xx-h^'
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = os.getenv("DEBUG", "False") == "True"
+# DEBUG = os.getenv("DEBUG", "False") == "True"
 DEBUG = True
 ALLOWED_HOSTS = ['*']
-#ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1, localhost").split(",")
+# ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1, localhost").split(",")
 
 # Application definition
 
@@ -43,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'corsheaders',
     'usuarios'
 ]
@@ -83,19 +82,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'vercel_app.wsgi.app'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 # Note: Django modules for using databases are not support in serverless
 # environments like Vercel. You can use a database over HTTP, hosted elsewhere.
 
+
+# Base de datos produccion
+# DATABASES = {
+#     'default': dj_database_url.config(default=DATABASE_URL,conn_max_age=1800)
+# }
+
+DATABASE_URL_Pruebas = "postgresql://postgres:7IvalFZ7y5fgDSy28GWt@containers-us-west-110.railway.app:6038/railway"
 DATABASES = {
-    'default': dj_database_url.config(default=DATABASE_URL,conn_max_age=1800)
+    'default': dj_database_url.config(default=DATABASE_URL_Pruebas, conn_max_age=1800)
 }
-
-
-# Password validation
-# https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -112,7 +113,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -124,7 +124,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
@@ -134,5 +133,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-

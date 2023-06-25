@@ -5,6 +5,10 @@ from django.contrib.auth import authenticate, login, get_user_model
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.datastructures import MultiValueDict
 from django.contrib.auth.models import User
+from .models import Session, Question
+from .serializers import SessionSerializer
+import random
+from django.db.models import Count
 import json
 import re
 
@@ -35,11 +39,21 @@ def register_view(request):
         try:
             user = User.objects.create_user(username, email, password)
             user.save()
+            session = Session.objects.create(user=user)
+            preguntas_disponibles = Question.objects.all()
+            cantidad_preguntas = preguntas_disponibles.count()
+            if cantidad_preguntas >= 5:
+                preguntas_seleccionadas = random.sample(list(preguntas_disponibles), 5)
+            else:
+                preguntas_seleccionadas = preguntas_disponibles
+            session.questions.set(preguntas_seleccionadas)
+            session.save()
+            session = SessionSerializer(instance=session)
         except IntegrityError:
             return JsonResponse({"message": "Username already taken."})
         
         login(request, user)
-        return JsonResponse({"message": "Registration successful.", "id": user.id, "username": user.username})
+        return JsonResponse({"message": "Registration successful.", "id": user.id, "username": user.username, "session": session.data})
     else:
         return JsonResponse({"message": "Only POST request are allowed"}, status=405)
     
@@ -51,7 +65,6 @@ def login_view(request):
             data = json.loads(request.body)
             email = data["email"]
             password = data["password"]
-            print(email, password)
         except KeyError:
             return JsonResponse({"message": "Invalid JSON data."})
 
@@ -60,7 +73,20 @@ def login_view(request):
 
         if user is not None and user.check_password(password):
             login(request, user)
-            return JsonResponse({"message": "Login successful", "id": user.id, "username": user.username})
+            session, _ = Session.objects.get_or_create(user=user)
+            if session.Evaluacion == 5:
+                preguntas_disponibles = Question.objects.all()
+                cantidad_preguntas = preguntas_disponibles.count()
+                if cantidad_preguntas >= 5:
+                    preguntas_seleccionadas = random.sample(list(preguntas_disponibles), 5)
+                else:
+                    preguntas_seleccionadas = preguntas_disponibles
+
+                session.questions.set(preguntas_seleccionadas)
+                session.Evaluacion = 0
+                session.save()
+            session = SessionSerializer(instance=session)
+            return JsonResponse({"message": "Login successful", "id": user.id, "username": user.username, "session": session.data})
         else:
             return JsonResponse({"message": "Invalid email and/or password."})
 
