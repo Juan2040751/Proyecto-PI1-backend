@@ -1,0 +1,16 @@
+[
+  {
+    "model": "usuarios.question",
+    "pk": 1,
+    "fields": {
+      "utterance": "Enunciado de prueba",
+      "answer": "opt1",
+      "opt1": "Opcion de respuesta 1",
+      "opt2": "Opcion de respuesta 2",
+      "opt3": "Opcion de respuesta 3",
+      "opt4": "Opcion de respuesta 4",
+      "feedback": "Retroalimentación en caso de respuesta incorrecta"
+    }
+  }
+
+]
