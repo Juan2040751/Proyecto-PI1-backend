@@ -88,15 +88,15 @@ WSGI_APPLICATION = 'vercel_app.wsgi.app'
 # environments like Vercel. You can use a database over HTTP, hosted elsewhere.
 
 
-# Base de datos produccion
-# DATABASES = {
-#     'default': dj_database_url.config(default=DATABASE_URL,conn_max_age=1800)
-# }
-
-DATABASE_URL_Pruebas = "postgresql://postgres:7IvalFZ7y5fgDSy28GWt@containers-us-west-110.railway.app:6038/railway"
+#Base de datos produccion
 DATABASES = {
-    'default': dj_database_url.config(default=DATABASE_URL_Pruebas, conn_max_age=1800)
+    'default': dj_database_url.config(default=DATABASE_URL,conn_max_age=1800)
 }
+
+# DATABASE_URL_Pruebas = "postgresql://postgres:7IvalFZ7y5fgDSy28GWt@containers-us-west-110.railway.app:6038/railway"
+# DATABASES = {
+#     'default': dj_database_url.config(default=DATABASE_URL_Pruebas, conn_max_age=1800)
+# }
 
 AUTH_PASSWORD_VALIDATORS = [
     {

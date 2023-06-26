@@ -70,10 +70,8 @@ def login_view(request):
             password = data["password"]
         except KeyError:
             return JsonResponse({"message": "Invalid JSON data."})
-
         User = get_user_model()
         user = User.objects.filter(email=email).first()
-
         if user is not None and user.check_password(password):
             login(request, user)
             session, _ = Session.objects.get_or_create(user=user)
