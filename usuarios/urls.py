@@ -6,4 +6,5 @@ urlpatterns = [
     path("sesion", views.update_session, name="sesion"),
     path("login", views.login_view, name="login"),
     path("getUsuarios", views.get_users_view, name="getUsuarios"),
+    path("", views.conect_view, name="conectServer")
 ]
