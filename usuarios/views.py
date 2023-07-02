@@ -17,6 +17,10 @@ from .serializers import SessionSerializer
 # Create your views here.
 @csrf_exempt
 def register_view(request):
+    """
+    Vista para el registro de usuarios.
+    Permite registrar un nuevo usuario en el sistema y crea una sesión asociada a ese usuario.
+    """
     if request.method == "POST":
         try:
             data = json.loads(request.body)
@@ -63,6 +67,10 @@ def register_view(request):
 
 @csrf_exempt
 def login_view(request):
+    """
+    Vista para iniciar sesión.
+    Permite que un usuario inicie sesión en el sistema y actualiza la sesión asociada a ese usuario si es necesario.
+    """
     if request.method == "POST":
         try:
             data = json.loads(request.body)
@@ -98,15 +106,24 @@ def login_view(request):
 
 @csrf_exempt
 def get_users_view(request):
+    """
+    Vista para obtener la lista de usuarios.
+    Devuelve una lista con todos los usuarios registrados en el sistema.
+    """
     users = User.objects.all().values()
     return JsonResponse(list(users), safe=False)
 
 
 @csrf_exempt
 def update_session(request):
+    """
+    Vista para actualizar una sesión.
+    Permite actualizar los datos de una sesión en el sistema.
+    """
     if request.method == "PUT":
         data = json.loads(request.body)
-        session, _= Session.objects.get_or_create(pk=data["id"])
+        answers = data["answers"]
+        session = Session.objects.get(pk=data["id"])
         session.lastPage = data["lastPage"]
         session.Landing = data["Landing"]
         session.Destacado = data["Destacado"]
@@ -114,6 +131,11 @@ def update_session(request):
         session.Museo = data["Museo"]
         session.Gastronomía = data["Gastronomía"]
         session.Evaluacion = data["Evaluacion"]
+        session.answer1 = answers["answer1"]
+        session.answer2 = answers["answer2"]
+        session.answer3 = answers["answer3"]
+        session.answer4 = answers["answer4"]
+        session.answer5 = answers["answer5"]
         if session.Evaluacion == 5:
             preguntas_disponibles = Question.objects.all()
             cantidad_preguntas = preguntas_disponibles.count()
@@ -128,3 +150,14 @@ def update_session(request):
         return JsonResponse({"message": "Session updated successfully.", "session": SessionSerializer(instance=session).data}, status=200)
     else:
         return JsonResponse({"message": "Only PUT requests are allowed."}, status=405)
+
+@csrf_exempt
+def conect_view(request):
+    """
+    Vista para verificar la conexión con el servidor.
+    Devuelve un mensaje de éxito para confirmar que el servidor está funcionando correctamente.
+    """
+    if request.method == "GET":
+        return JsonResponse(
+            {"message": "Server started successfully."},
+            status=200)
