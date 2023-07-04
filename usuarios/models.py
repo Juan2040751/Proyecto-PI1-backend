@@ -15,6 +15,9 @@ class Question(models.Model):
     opt4 = models.CharField(max_length=2000)
     feedback = models.CharField(max_length=5000)
 
+    def __str__(self):
+        return self.id
+
 
 class Session(models.Model):
     """

@@ -3,14 +3,79 @@
     "model": "usuarios.question",
     "pk": 1,
     "fields": {
-      "utterance": "Enunciado de prueba",
+      "utterance": "¿Sobre qué año los sumerios inventaron un sistema de escritura con el uso de cuñas para grabar signos?",
       "answer": "opt1",
-      "opt1": "Opcion de respuesta 1",
-      "opt2": "Opcion de respuesta 2",
-      "opt3": "Opcion de respuesta 3",
-      "opt4": "Opcion de respuesta 4",
-      "feedback": "Retroalimentación en caso de respuesta incorrecta"
+      "opt1": "3300 a.C",
+      "opt2": "1600 a.C",
+      "opt3": "3500 a.C",
+      "opt4": "2900 a.C",
+      "feedback": "Eventos destacados"
+    }
+  },
+  {
+    "model": "usuarios.question",
+    "pk": 2,
+    "fields": {
+      "utterance": "¿Cuál de las siguientes ciudades sumerias se encontraba en el actual Irak?",
+      "answer": "opt3",
+      "opt1": "Nina",
+      "opt2": "Nippur",
+      "opt3": "Ur",
+      "opt4": "Eridu",
+      "feedback": "Eventos destacados"
+    }
+  },
+  {
+    "model": "usuarios.question",
+    "pk": 3,
+    "fields": {
+      "utterance": "¿En cuál de las siguientes ciudades sumerias se considera que nació el cálculo y la contabilidad?",
+      "answer": "opt4",
+      "opt1": "Lagash",
+      "opt2": "Girsu",
+      "opt3": "Tigris",
+      "opt4": "Uruk",
+      "feedback": "Eventos destacados"
+    }
+  },
+  {
+    "model": "usuarios.question",
+    "pk": 4,
+    "fields": {
+      "utterance": "¿Cuál de los siguientes personajes que vivió entre las bestias fue civilizado y terminó siendo ejecutado?",
+      "answer": "opt2",
+      "opt1": "Adapa",
+      "opt2": "Enkidu",
+      "opt3": "Gilgamesh",
+      "opt4": "Inanna",
+      "feedback": "Eventos destacados"
+    }
+  },
+  {
+    "model": "usuarios.question",
+    "pk": 5,
+    "fields": {
+      "utterance": "El Juego Real de Ur se compone de:",
+      "answer": "opt3",
+      "opt1": "5 fichas blancas, 5 fichas negras, 2 dados y un tablero",
+      "opt2": "16 fichas blancas, 16 fichas negras y un tablero",
+      "opt3": "7 fichas blancas, 7 fichas negras, 3 dados y un tablero",
+      "opt4": "Ninguna de las anteriores",
+      "feedback": "Eventos destacados"
+    }
+  },
+  {
+    "model": "usuarios.question",
+    "pk": 6,
+    "fields": {
+      "utterance": "El zigurat de Ur fue construido alrededor del siglo:",
+      "answer": "opt1",
+      "opt1": "XXI a.C",
+      "opt2": "XVIII a.C",
+      "opt3": "XV a.C",
+      "opt4": "XX a.C",
+      "feedback": "Arquitectura"
     }
   }
-
+  
 ]

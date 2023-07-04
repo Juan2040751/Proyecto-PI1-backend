@@ -83,6 +83,17 @@ def login_view(request):
         if user is not None and user.check_password(password):
             login(request, user)
             session, _ = Session.objects.get_or_create(user=user)
+            if(len(SessionSerializer(instance=session).data["questions"])):
+                preguntas_disponibles = Question.objects.all()
+                cantidad_preguntas = preguntas_disponibles.count()
+                if cantidad_preguntas >= 5:
+                    preguntas_seleccionadas = random.sample(list(preguntas_disponibles), 5)
+                else:
+                    preguntas_seleccionadas = preguntas_disponibles
+
+                session.questions.set(preguntas_seleccionadas)
+                session.save()
+
             if session.Evaluacion == 5:
                 preguntas_disponibles = Question.objects.all()
                 cantidad_preguntas = preguntas_disponibles.count()
