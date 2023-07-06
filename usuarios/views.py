@@ -160,6 +160,11 @@ def update_session(request):
 
             session.questions.set(preguntas_seleccionadas)
             session.Evaluacion = 0
+            session.answer1 = None
+            session.answer2 = None
+            session.answer3 = None
+            session.answer4 = None
+            session.answer5 = None
         session.save()
         return JsonResponse(
             {"message": "Session updated successfully.", "session": SessionSerializer(instance=session).data},
