@@ -1,10 +1,8 @@
-from django.http import JsonResponse
 import json
 import random
 import re
 
 from django.contrib.auth import login, get_user_model
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.http import JsonResponse
@@ -83,6 +81,17 @@ def login_view(request):
         if user is not None and user.check_password(password):
             login(request, user)
             session, _ = Session.objects.get_or_create(user=user)
+            if (len(SessionSerializer(instance=session).data["questions"]) < 5):
+                preguntas_disponibles = Question.objects.all()
+                cantidad_preguntas = preguntas_disponibles.count()
+                if cantidad_preguntas >= 5:
+                    preguntas_seleccionadas = random.sample(list(preguntas_disponibles), 5)
+                else:
+                    preguntas_seleccionadas = preguntas_disponibles
+
+                session.questions.set(preguntas_seleccionadas)
+                session.save()
+
             if session.Evaluacion == 5:
                 preguntas_disponibles = Question.objects.all()
                 cantidad_preguntas = preguntas_disponibles.count()
@@ -93,6 +102,11 @@ def login_view(request):
 
                 session.questions.set(preguntas_seleccionadas)
                 session.Evaluacion = 0
+                session.answer1 = None
+                session.answer2 = None
+                session.answer3 = None
+                session.answer4 = None
+                session.answer5 = None
                 session.save()
             session = SessionSerializer(instance=session)
             return JsonResponse(
@@ -146,10 +160,18 @@ def update_session(request):
 
             session.questions.set(preguntas_seleccionadas)
             session.Evaluacion = 0
+            session.answer1 = None
+            session.answer2 = None
+            session.answer3 = None
+            session.answer4 = None
+            session.answer5 = None
         session.save()
-        return JsonResponse({"message": "Session updated successfully.", "session": SessionSerializer(instance=session).data}, status=200)
+        return JsonResponse(
+            {"message": "Session updated successfully.", "session": SessionSerializer(instance=session).data},
+            status=200)
     else:
         return JsonResponse({"message": "Only PUT requests are allowed."}, status=405)
+
 
 @csrf_exempt
 def conect_view(request):
