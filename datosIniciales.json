@@ -76,6 +76,449 @@
       "opt4": "XX a.C",
       "feedback": "Arquitectura"
     }
+  },
+    
+    {
+    "model": "users.question",
+    "pk": 7,
+    "fields": {
+      "utterance": "¿Sobre qué año los sumerios inventaron un sistema de escritura con el uso de cuñas para grabar signos? :",
+      "answer": "opt2",
+      "opt1": "1600 a.C",
+      "opt2": "3300 a.C",
+      "opt3": "2900 a.C",
+      "opt4": "1500 a.C",
+      "feedback": "Eventos destacados"
+    }
+  },
+    {
+    "model": "users.question",
+    "pk": 8,
+    "fields": {
+      "utterance": "¿Cuál era uno de los alimentos básicos en la gastronomía sumeria?:",
+      "answer": "opt4",
+      "opt1": "Maíz",
+      "opt2": "Trigo",
+      "opt3": "Arroz",
+      "opt4": "Cebada",
+      "feedback": "Gastronomia"
+    }
+  }, 
+    {
+    "model": "users.question",
+    "pk": 9,
+    "fields": {
+      "utterance": "¿Qué tipo de ladrillo se utilizaba comúnmente en la arquitectura sumeria?:",
+      "answer": "opt3",
+      "opt1": "Ladrillo de piedra",
+      "opt2": "Ladrillo de madera",
+      "opt3": "Ladrillo de barro",
+      "opt4": "Ladrillo de metal",
+      "feedback": "Eventos destacados"
+    }
+  },
+    {
+    "model": "users.question",
+    "pk": 10,
+    "fields": {
+      "utterance": "¿Cuál era el nombre del dios sumerio asociado con el sol y la justicia?:",
+      "answer": " ",
+      "opt1": "Utu",
+      "opt2": "Entil",
+      "opt3": "Innana ",
+      "opt4": "Poseidon",
+      "feedback": "Eventos destacados"
+    }
+  },
+    {
+    "model": "users.question",
+    "pk": 11,
+    "fields": {
+      "utterance": "¿Qué rey sumerio es famoso por la creación de un código de leyes conocido como el Codigo de Hammurabi?:",
+      "answer": "opt4",
+      "opt1": "Sargón",
+      "opt2": "Ra",
+      "opt3": "Ur",
+      "opt4": "Hammurabi",
+      "feedback": "Eventos destacados"
+    }
+  }, 
+    {
+    "model": "users.question",
+    "pk": 12,
+    "fields": {
+      "utterance": "¿Cuál era la principal actividad económica en la antigua Sumeria?:",
+      "answer": "opt2",
+      "opt1": "Pesca",
+      "opt2": "Agricultura",
+      "opt3": "Comercio",
+      "opt4": "Mineria",
+      "feedback": "Eventos destacados"
+    }
+  },  
+    {
+    "model": "users.question",
+    "pk": 13,
+    "fields": {
+      "utterance": "¿Cuál era la ciudad más importante de la civilización Sumeria?:",
+      "answer": "opt2",
+      "opt1": "Nipur",
+      "opt2": "Uruk",
+      "opt3": "Ur",
+      "opt4": "Legash",
+      "feedback": "Eventos destacados"
+    }
+  },
+    {
+    "model": "users.question",
+    "pk": 14,
+    "fields": {
+      "utterance": "¿Cuál era el material más utilizado en la fabricación de utensilios y armas en la antigua Sumeria?:",
+      "answer": "opt4",
+      "opt1": "Bronce",
+      "opt2": "Hierro",
+      "opt3": "Oro",
+      "opt4": "Cobre",
+      "feedback": "Eventos destacados"
+    }
+  },
+    {
+    "model": "users.question",
+    "pk": 15,
+    "fields": {
+      "utterance": "¿Cuál era el sistema de escritura utilizado por los sumerios?:",
+      "answer": "opt3",
+      "opt1": "Jeroglíficos",
+      "opt2": "Alfabeto",
+      "opt3": "Cuneinforme",
+      "opt4": "Griego",
+      "feedback": "Eventos destacados"
+    }
+  ,}
+    {
+    "model": "users.question",
+    "pk": 16,
+    "fields": {
+      "utterance": "¿Qué dios sumerio era considerado el rey de los dioses?:",
+      "answer": "opt2",
+      "opt1": "Kratos",
+      "opt2": "Anu",
+      "opt3": "Enki",
+      "opt4": "Enlil",
+      "feedback": "Eventos destacados"
+    }
+  },
+    {
+    "model": "users.question",
+    "pk": 17,
+    "fields": {
+      "utterance": "¿Cuál era la principal herramienta utilizada en la escritura cuneiforme sumeria?:",
+      "answer": "opt3",
+      "opt1": "Pluma",
+      "opt2": "Pencil",
+      "opt3": "Estilete",
+      "opt4": "Lápiz",
+      "feedback": "Eventos destacados"
+    }
+  },  
+    {
+    "model": "users.question",
+    "pk": 18,
+    "fields": {
+      "utterance": "¿Cuál era el nombre del rey sumerio conocido por construir la Gran Ziggurat de Ur?:",
+      "answer": "opt4",
+      "opt1": "Shulgi",
+      "opt2": "Buddha",
+      "opt3": "Gudea",
+      "opt4": "ur-Nammu",
+      "feedback": "Eventos destacados"
+    }
+  },
+    {
+    "model": "users.question",
+    "pk": 19,
+    "fields": {
+      "utterance": "¿Cuál era el sistema de numeración utilizado por los sumerios?:",
+      "answer": "opt4",
+      "opt1": "Base 20",
+      "opt2": "Base 10",
+      "opt3": "Base 15",
+      "opt4": "Base 60",
+      "feedback": "Eventos destacados"
+    }
+  },
+    {
+    "model": "users.question",
+    "pk": 20,
+    "fields": {
+      "utterance": "¿Cuál era el nombre del gobernante supremo en la antigua Sumeria?:",
+      "answer": "opt1",
+      "opt1": "Lugal",
+      "opt2": "Ensi",
+      "opt3": "Patesi",
+      "opt4": "Lugal-gal",
+      "feedback": "Eventos destacados"
+    }
+  },
+    {
+    "model": "users.question",
+    "pk": 21,
+    "fields": {
+      "utterance": "¿Qué tipo de ganado era importante en la economía sumeria?:",
+      "answer": "opt3",
+      "opt1": "Vacas",
+      "opt2": "Camellos",
+      "opt3": "Ovejas",
+      "opt4": "Gatos",
+      "feedback": "Eventos destacados"
+    }
+  },
+    {
+    "model": "users.question",
+    "pk": 22,
+    "fields": {
+      "utterance": "¿Qué metal se utilizaba para fabricar joyas en la antigua Sumeria?:",
+      "answer": "opt2",
+      "opt1": "Diamante",
+      "opt2": "Oro",
+      "opt3": "Plata",
+      "opt4": "Cobre",
+      "feedback": "Eventos destacados"
+    }
+  },
+    {
+    "model": "users.question",
+    "pk": 23,
+    "fields": {
+      "utterance": "Qué tipo de instrumento musical era popular en la antigua Sumeria?:",
+      "answer": "opt1",
+      "opt1": "Lira",
+      "opt2": "Flauta",
+      "opt3": "Tambor",
+      "opt4": "Bateria",
+      "feedback": "Eventos destacados"
+    }
+  },
+    {
+    "model": "users.question",
+    "pk": 24,
+    "fields": {
+      "utterance": "¿Cuál era el nombre del dios sumerio asociado con el agua y los ríos?:",
+      "answer": "opt3",
+      "opt1": "Utu",
+      "opt2": "Ares",
+      "opt3": "Enki",
+      "opt4": "Thor",
+      "feedback": "Eventos destacados"
+    }
+  },
+    {
+    "model": "users.question",
+    "pk": 25,
+    "fields": {
+      "utterance": "¿Cuál era el nombre de la diosa sumeria asociada con el amor, la belleza y la guerra?:",
+      "answer": "opt1",
+      "opt1": "Innana",
+      "opt2": "Atenea",
+      "opt3": "Ishtar",
+      "opt4": "Ninhursag",
+      "feedback": "Eventos destacados"
+    }
+  },
+    {
+    "model": "users.question",
+    "pk": 26,
+    "fields": {
+      "utterance": "¿Que alimento consumimos frecuentemente gracias al legado gastronomico de los Sumerios?:",
+      "answer": "opt4",
+      "opt1": "Hamburguesa",
+      "opt2": "Pizza",
+      "opt3": "Changua",
+      "opt4": "Pan",
+      "feedback": "Gastronomia"
+    }
+  },
+    {
+    "model": "users.question",
+    "pk": 27,
+    "fields": {
+      "utterance": "¿Qué tipo de estructura arquitectónica era común en las ciudades sumerias para almacenar granos y otros productos?:",
+      "answer": "opt2",
+      "opt1": "Almacén",
+      "opt2": "Silo",
+      "opt3": "Bodega",
+      "opt4": "Casa",
+      "feedback": "Arquitectura"
+    }
+  },
+    {
+    "model": "users.question",
+    "pk": 28,
+    "fields": {
+      "utterance": "¿Cuál era el principal edificio religioso en una ciudad sumeria?:",
+      "answer": "opt1",
+      "opt1": "Templo",
+      "opt2": "Casa",
+      "opt3": "Mercado",
+      "opt4": "Finca",
+      "feedback": "Arquitectura"
+    }
+  },
+    {
+    "model": "users.question",
+    "pk": 29,
+    "fields": {
+      "utterance": "¿Qué río atravesaba la región donde se desarrolló la civilización sumeria?:",
+      "answer": "opt4",
+      "opt1": "Río Nilou",
+      "opt2": "Río Tigris",
+      "opt3": "Río Amazonas",
+      "opt4": "Río Eufrates",
+      "feedback": "Eventos destacados"
+    }
+  },
+    {
+    "model": "users.question",
+    "pk": 30,
+    "fields": {
+      "utterance": "¿Cual era el principal proposito de los soldados Sumerios?:",
+      "answer": "opt2",
+      "opt1": "Vigilar",
+      "opt2": "Protección y expansión",
+      "opt3": "Dormir",
+      "opt4": "Cobrar impuestos",
+      "feedback": "Museo"
+    }
+  },
+    {
+    "model": "usuarios.question",
+    "pk": 31,
+    "fields": {
+      "utterance": "¿Donde habitaron los Sumerios?:",
+      "answer": "opt2",
+      "opt1": "Africa",
+      "opt2": "Mesopotamia",
+      "opt3": "Atlantis",
+      "opt4": "Grecia",
+      "feedback": "Eventos destacados"
+    }
+  },
+    {
+    "model": "usuarios.question",
+    "pk": 32,
+    "fields": {
+      "utterance": "¿Que tecnicas avanzadas de cocina desarrollaron los Sumerios?:",
+      "answer": "opt4",
+      "opt1": "Cocción",
+      "opt2": "Asar",
+      "opt3": "Derretir",
+      "opt4": "Fermentación",
+      "feedback": "Gastronomia"
+    }
+  },
+    {
+    "model": "usuarios.question",
+    "pk": 33,
+    "fields": {
+      "utterance": "¿Con que ingredientes elaboraban el pan de cebada los Sumerios?:",
+      "answer": "Harina de cebada, agua y sal",
+      "opt1": "Pimienta y azucar",
+      "opt2": "Huevos y arroz",
+      "opt3": "Platanos",
+      "opt4": "Maíz",
+      "feedback": "Gastronomia"
+    }
+  },
+    {
+    "model": "usuarios.question",
+    "pk": 34,
+    "fields": {
+      "utterance": "Los Sumerios inventaron:",
+      "answer": "opt2",
+      "opt1": "El celular",
+      "opt2": "La rueda",
+      "opt3": "Las piramides",
+      "opt4": "Los zapatos",
+      "feedback": "Eventos destacados"
+    }
+  },
+    {
+    "model": "usuarios.question",
+    "pk": 35,
+    "fields": {
+      "utterance": "¿Donde grababan los Sumerios sus escrituras?:",
+      "answer": "opt4",
+      "opt1": "En papel",
+      "opt2": "En rocas",
+      "opt3": "En arboles",
+      "opt4": "En arcilla",
+      "feedback": "Eventos destacados"
+    }
+  },
+    {
+    "model": "usuarios.question",
+    "pk": 36,
+    "fields": {
+      "utterance": "¿Que buscaba el rey Gilgamesh?:",
+      "answer": "opt2",
+      "opt1": "La sabiduría absoluta",
+      "opt2": "La inmortalidad",
+      "opt3": "Una ciudad perdida",
+      "opt4": "Oro",
+      "feedback": "Eventos destacados"
+    }
+  },
+    {
+    "model": "usuarios.question",
+    "pk": 37,
+    "fields": {
+      "utterance": "¿Que es la Liste Real Sumeria?:",
+      "answer": "opt4",
+      "opt1": "Un documento matemático",
+      "opt2": "Un poema",
+      "opt3": "Una reflexión",
+      "opt4": "Un documento que enumera a los reyes de la antigua Mesopotamia",
+      "feedback": "Museo"
+    }
+  },
+    {
+    "model": "usuarios.question",
+    "pk": 38,
+    "fields": {
+      "utterance": "¿Que era un sistema de irrigación?:",
+      "answer": "opt1",
+      "opt1": "Canales para controlar el flujo de agua",
+      "opt2": "Un sistema de agricultura",
+      "opt3": "Una forma de construir",
+      "opt4": "Un sistema de transporte",
+      "feedback": "Arquitectura"
+    }
+  },
+    {
+    "model": "usuarios.question",
+    "pk": 39,
+    "fields": {
+      "utterance": "¿Que era el Zigurat?:",
+      "answer": "opt3",
+      "opt1": "Un plato de comida",
+      "opt2": "Un artefacto",
+      "opt3": "Una estructura religiosa en forma de pirámide",
+      "opt4": "Una obra literaria",
+      "feedback": "Arquitectura"
+    }
+  },
+    {
+    "model": "usuarios.question",
+    "pk": 40,
+    "fields": {
+      "utterance": "¿Que es el estandarte de Ur?:",
+      "answer": "opt1",
+      "opt1": "Un artefacto antiguo con escenas decorativas",
+      "opt2": "Una ciudad",
+      "opt3": "Un juego",
+      "opt4": "Un artefacto donde guardaban comida",
+      "feedback": "Museo"
+    }
   }
   
 ]
