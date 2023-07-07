@@ -19,7 +19,7 @@ from django.core.management.utils import get_random_secret_key
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DATABASE_URL = "postgres://proyecto_pi1_user:u0ZDtadoBubQTMohzFWlS2JGHgFRH3Fl@dpg-chpa2ufdvk4goeoh2klg-a.oregon-postgres.render.com/proyecto_pi1"
+DATABASE_URL = "postgres://proyecto_pi1_user:u0ZDtadoBubQTMohzFWlS2JGHgFRH3Fl@dpg-chpa2ufdvk4goeoh2klg-a/proyecto_pi1"
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -89,18 +89,20 @@ WSGI_APPLICATION = 'vercel_app.wsgi.app'
 
 
 #Base de datos produccion
-'''
+
 DATABASES = {
     'default': dj_database_url.config(default=DATABASE_URL,conn_max_age=1800)
 }
+
+
+
 '''
-
-
-
 DATABASE_URL_Pruebas = "postgresql://postgres:7IvalFZ7y5fgDSy28GWt@containers-us-west-110.railway.app:6038/railway"
 DATABASES = {
      'default': dj_database_url.config(default=DATABASE_URL_Pruebas, conn_max_age=1800)
 }
+'''
+
 
 
 
