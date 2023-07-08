@@ -19,7 +19,7 @@ from django.core.management.utils import get_random_secret_key
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DATABASE_URL = "postgres://proyecto_pi1_user:u0ZDtadoBubQTMohzFWlS2JGHgFRH3Fl@dpg-chpa2ufdvk4goeoh2klg-a/proyecto_pi1"
+DATABASE_URL = os.getenv("DATABASE_URL")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
